@@ -20,7 +20,6 @@ h2{
 }
 
 body{
-    background: url(img/tree1.png), url(img/field1.jpg);
-    background-repeat: no-repeat, repeat;
+    background: url(../jobsheet_1/bunga2.jpg);
     color: white;
 }
