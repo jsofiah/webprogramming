@@ -5,7 +5,9 @@ html, body{
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ddd;
+    background-image: url(img/bg-gradient.jpg);
+    background-position: center;
+    background-size: cover;
     line-height: 1.65;
     padding-bottom: 1000px;
 }
@@ -13,25 +15,75 @@ body{
 .container{
     width: 800px;
     margin: 50px auto;
-    background-color: #fff;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
+
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .sidebar-satu{
     flex: 1;
     order: 1;
     margin-right: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    /* background-color: #FDE2E2; */
+    background: linear-gradient(to top, rgba(255, 111, 0, 1), rgba(0, 0, 0, 0.226), rgba(0,0,0,0.7));
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 176, 115, 0.5);
 }
 
 .kolom-utama{
     flex: 3;
     order: 2;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #FFF5E4;
+    background: linear-gradient(to top, rgba(160, 32, 240, 1), rgba(0, 0, 0, 0.226), rgba(0,0,0,0.7));
+    color: white;
+    box-shadow: 0 4px 12px rgba(203, 119, 255, 0.5);
 }
 
 .sidebar-dua{
     flex: 1;
     order: 3;
-    margin-left: 50px;
+    margin-left: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #DFF6FF;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: linear-gradient(to top, rgba(0, 180, 216, 1), rgba(0, 0, 0, 0.226), rgba(0,0,0,0.7));
+    color: white;
+    box-shadow: 0 4px 12px rgba(119, 231, 253, 0.5);
+}
+
+.sidebar-satu a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.sidebar-satu a:hover {
+    color: #ffb703;
+    text-shadow: 0 0 10px #ffb703, 0 0 20px #ffb703;
+}
+
+li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+li::before {
+    content: "\2726";
+    position: absolute;
+    left: 0;
+    color: white;
 }
