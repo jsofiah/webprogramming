@@ -21,6 +21,7 @@ $hasilOr = $a || $b;
 $hasilNotA = !$a;
 $hasilNotB = !$b;
 
+
 echo "Hasil dari penjumlahan $a dan $b adalah $hasilTambah <br><br>";
 echo "Hasil dari pengurangan $a dan $b adalah $hasilKurang <br><br>";
 echo "Hasil dari perkalian $a dan $b adalah $hasilKali <br><br>";
@@ -37,4 +38,17 @@ echo "Hasil dari $a and $b adalah $hasilAnd <br><br>";
 echo "Hasil dari $a or $b adalah $hasilOr <br><br>";
 echo "Hasil not $a adalah $hasilNotA <br><br>";
 echo "Hasil not $b adalah $hasilNotB <br><br>";
+
+$hasilAtambahB = $a += $b;
+$hasilAkurangB = $a -= $b;
+$hasilAkaliB = $a *= $b;
+$hasilAbagiB = $a /= $b;
+$hasilAsisabagiB = $a %= $b;
+$a = 10;
+$b = 5;
+echo "Hasil dari $a += $b adalah $hasilAtambahB <br><br>";
+echo "Hasil dari $a -= $b adalah $hasilAkurangB <br><br>";
+echo "Hasil dari $a *= $b adalah $hasilAkaliB <br><br>";
+echo "Hasil dari $a /= $b adalah $hasilAbagiB <br><br>";
+echo "Hasil dari $a %= $b adalah $hasilAsisabagiB <br><br>";
 ?>
