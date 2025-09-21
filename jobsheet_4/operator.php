@@ -16,6 +16,11 @@ $hasilLebihBesar = $a < $b;
 $hasilLebihKecilSama = $a <= $b;
 $hasilLebihBesarSama = $a >= $b;
 
+$hasilAnd = $a && $b;
+$hasilOr = $a || $b;
+$hasilNotA = !$a;
+$hasilNotB = !$b;
+
 echo "Hasil dari penjumlahan $a dan $b adalah $hasilTambah <br><br>";
 echo "Hasil dari pengurangan $a dan $b adalah $hasilKurang <br><br>";
 echo "Hasil dari perkalian $a dan $b adalah $hasilKali <br><br>";
@@ -28,4 +33,8 @@ echo "Apakah $a lebih kecil dari $b ? $hasilLebihKecil <br><br>";
 echo "Apakah $a lebih besar dari $b ? $hasilLebihBesar <br><br>";
 echo "Apakah $a lebih kecil sama dengan $b ? $hasilLebihKecilSama <br><br>";
 echo "Apakah $a lebih besar sama dengan $b ? $hasilLebihBesarSama <br><br>";
+echo "Hasil dari $a and $b adalah $hasilAnd <br><br>";
+echo "Hasil dari $a or $b adalah $hasilOr <br><br>";
+echo "Hasil not $a adalah $hasilNotA <br><br>";
+echo "Hasil not $b adalah $hasilNotB <br><br>";
 ?>
