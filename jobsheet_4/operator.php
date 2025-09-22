@@ -51,4 +51,9 @@ echo "Hasil dari $a -= $b adalah $hasilAkurangB <br><br>";
 echo "Hasil dari $a *= $b adalah $hasilAkaliB <br><br>";
 echo "Hasil dari $a /= $b adalah $hasilAbagiB <br><br>";
 echo "Hasil dari $a %= $b adalah $hasilAsisabagiB <br><br>";
+
+$hasilIdentik = $a === $b;
+$hasilTidakIdentik = $a !== $b;
+echo "Hasil Identik dari $a += $b adalah $hasilIdentik <br><br>";
+echo "Hasil Tidak Identik dari $a -= $b adalah $hasilTidakIdentik <br><br>";
 ?>
