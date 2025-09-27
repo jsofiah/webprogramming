@@ -37,6 +37,9 @@
         echo "<ul>";
         foreach ($menu as $key => $item) {
             echo "<li>{$item['nama']}</li>";
+            if(isset($item["subMenu"])){
+                tampilkanAngka($item["subMenu"]);
+            }
         }
         echo "</ul>";
     }
