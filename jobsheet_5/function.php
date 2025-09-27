@@ -6,4 +6,5 @@
     }
 
     perkenalan();
+    perkenalan();
 ?>
