@@ -16,9 +16,17 @@
     //     echo "Tidak ada yang cocok!";
     // }
 
-    $pattern = '/apple/';
-    $replacement = 'banana';
-    $text = 'I like apple pie.';
-    $new_text = preg_replace($pattern, $replacement, $text);
-    echo $new_text;
+    // $pattern = '/apple/';
+    // $replacement = 'banana';
+    // $text = 'I like apple pie.';
+    // $new_text = preg_replace($pattern, $replacement, $text);
+    // echo $new_text;
+
+    $pattern = '/go*d/';
+    $text = 'god is good.';
+    if(preg_match($pattern, $text, $matches)) {
+        echo "Cocokkan: " . $matches[0];
+    } else {
+        echo "Tidak ada yang cocok!";
+    }
 ?>
