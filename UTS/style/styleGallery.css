@@ -167,136 +167,55 @@ hr{
     margin-top: 30px;
 }
 
-.dawn h2,
-.dusk h2{
-    color:  #ff7b00;
-    font-size: 3rem;
-    text-align: center;
-    margin-top: 20px;
-    /* margin-bottom: 20px; */
-    letter-spacing: 2px;
-}
-
-.description-section{
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.artist-grid {
+.gallery {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
 }
-.profile-card {
-    background: #f5f5f5;
-    border-radius: 25px;
-    padding: 20px;
-    width: 100%;
-    max-width: 250px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+.gallery-item {
     position: relative;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.profile-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
-}
-
-.image-container {
-    position: relative;
-    width: 100%;
-    padding-top: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-.profile-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.profile-info {
-    text-align: center;
-}
-
-.name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
-}
-
-.profile-card:hover .name {
-    color: #ff7b00;
-}
-
-.description {
-    font-size: 0.9rem;
-    color: #4a4a4a;
-    margin-bottom: 15px;
-    line-height: 1.4;
-}
-.spotify-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: #ff7b00;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border: none;
-    border-radius: 40px;
-    padding: 10px 18px;
-    text-decoration: none;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
-.spotify-btn::before {
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.85);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.gallery-item::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ee8421, #e97e1a);
     transform: translate(-50%, -50%);
-    transition: width 0.5s ease, height 0.5s ease;
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.spotify-btn span {
-    position: relative;
-    z-index: 1;
-}
-
-.spotify-btn:hover::before {
-    width: 300%;
-    height: 300%;
-}
-
-.spotify-btn:hover {
-    box-shadow: 0 6px 15px rgba(185, 130, 29, 0.4);
-    transform: translateY(-2px);
-}
-
-.plus-icon {
-    font-size: 18px;
-    font-weight: 300;
-    transition: transform 0.3s ease;
+.gallery-item:hover::before {
+    animation: pulse 1s ease infinite;
 }
 
 .fade-up {

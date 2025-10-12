@@ -79,14 +79,27 @@ nav a:hover{
 
 .logo {
     position: fixed;
-    top: 2.7rem;
-    left: 3rem;
-    color: white;
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+    top: 1.9rem;
+    left: 10rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    height: 55px;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    transform: translateX(-50%);
     z-index: 5;
 }
+
+.logo-img {
+    height: 100px;
+    width: auto;
+    transition: all 0.3s ease;
+    transform: translateY(-20px);
+}
+
 
 .cta-button {
     position: fixed;
