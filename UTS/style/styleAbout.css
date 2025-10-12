@@ -362,6 +362,11 @@ nav a:hover{
     gap: 30px;
 }
 
+.why-card * {
+    position: relative;
+    z-index: 2;
+}
+
 .why-card {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(15px);
@@ -375,12 +380,57 @@ nav a:hover{
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+}
+
+.why-card:hover::before {
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .why-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    background: rgba(255, 255, 255, 0.85);
+}
+
+#world-class:hover{
+    background-image: url(../img/world-class.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+
+#cultural:hover{
+    background-image: url(../img/cultural.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+
+#moments:hover{
+    background-image: url(../img/moment.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+
+.why-card:hover h3,
+.why-card:hover p {
+    color: #fff;
+}
+
+.why-card:hover #music,
+.why-card:hover #globe,
+.why-card:hover #shines {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
 }
 
 .why-icon {
