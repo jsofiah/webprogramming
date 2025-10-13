@@ -236,10 +236,69 @@ hr{
     transform: scale(1.05);
 }
 
-.note {
-    margin-top: 15px;
-    font-size: 0.8rem;
-    opacity: 0.7;
+.accordion-container {
+    margin: 60px auto;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    color: #fff;
+}
+
+.accordion-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    color: #ff7b00;
+}
+
+details {
+    background: #ff9430;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+summary {
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #ff7b00;
+    border-radius: 10px;
+    list-style: none;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+summary::marker {
+    display: none;
+}
+
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+details[open] summary::after {
+    content: "–";
+    transform: rotate(180deg);
+}
+
+details p {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    background: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    animation: fadeSlide 0.3s ease;
 }
 
 .fade-up {
