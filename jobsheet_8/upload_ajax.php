@@ -1,34 +1,25 @@
 <?php
-if (isset($_FILES['files'])) {
-    $totalFiles = count($_FILES['files']['name']);
-    $allowedExtensions = array("jpg", "jpeg", "png", "gif");
-    $uploadDir = "images/";
+if(isset($_FILES["file"])){
+    $targetdir = "uploads/";
 
-    if (!file_exists($uploadDir)) {
-        mkdir($uploadDir, 0777, true);
+    if(!file_exists($targetdir)){
+        mkdir($targetdir, 0777, true);
     }
 
-    for ($i = 0; $i < $totalFiles; $i++) {
-        $fileName = $_FILES['files']['name'][$i];
-        $fileTmp = $_FILES['files']['tmp_name'][$i];
-        $fileSize = $_FILES['files']['size'][$i];
-        $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+    $targetfile = $targetdir . basename($_FILES["file"]["name"]);
+    $fileType = strtolower(pathinfo($targetfile, PATHINFO_EXTENSION));
 
-        if (!in_array($fileExt, $allowedExtensions)) {
-            echo "File $fileName ditolak (bukan gambar).<br>";
-            continue;
-        }
+    $allowedExtensions = array("txt", "pdf", "doc", "docx");
+    $maxsize = 3 * 1024 * 1024;
 
-        if ($fileSize > 5 * 1024 * 1024) {
-            echo "File $fileName terlalu besar (maks 5MB).<br>";
-            continue;
-        }
-
-        if (move_uploaded_file($fileTmp, $uploadDir . $fileName)) {
-            echo "File $fileName berhasil diunggah.<br>";
+    if(in_array($fileType, $allowedExtensions) && $_FILES["file"]["size"] <= $maxsize){
+        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetfile)){
+            echo "File berhasil diunggah ke folder uploads.";
         } else {
-            echo "Gagal mengunggah file $fileName.<br>";
+            echo "Gagal mengunggah file.";
         }
+    } else {
+        echo "File tidak valid atau melebihi ukuran maksimum (3MB).";
     }
 }
 ?>

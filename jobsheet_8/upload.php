@@ -1,7 +1,7 @@
 <?php
-    if(isset($_POST["submit"])){
+    if(isset($_FILES["file"])){
         $targetdir = "uploads/";
-        $targetfile = $targetdir . basename($_FILES["myFile"]["name"]);
+        $targetfile = $targetdir . basename($_FILES["file"]["name"]);
         $fileType = strtolower(pathinfo($targetfile, PATHINFO_EXTENSION));
 
         $allowedExtensions = array("txt", "pdf", "doc", "docx");
@@ -16,6 +16,5 @@
         } else {
             echo "File tidak valid atau melebihi ukuran maksimum yang diizinkan";
         }
-
     }
 ?>
