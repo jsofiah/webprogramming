@@ -3,6 +3,7 @@ $(document).ready(function(){
         e.preventDefault();
 
         var formData = new FormData(this);
+        $('#status').html('Mengunggah, harap tunggu...');
 
         $.ajax({
             type: 'POST',

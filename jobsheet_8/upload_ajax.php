@@ -1,26 +1,34 @@
 <?php
-    if(isset($_FILES['file'])){
-        $errors = array();
-        $file_name = $_FILES['file']['name'];
-        $file_size = $_FILES['file']['size'];
-        $file_tmp = $_FILES['file']['tmp_name'];
-        $file_type = $_FILES['file']['type'];
-        @$file_ext = strtolower("". end(explode('.', $_FILES['file']['name'])) . "");
-        $extension = array("pdf", "doc", "docx", "txt");
+if (isset($_FILES['files'])) {
+    $totalFiles = count($_FILES['files']['name']);
+    $allowedExtensions = array("jpg", "jpeg", "png", "gif");
+    $uploadDir = "images/";
 
-        if(in_array($file_ext, $extension) === false){
-            $errors[] = "Ekstensi file yang diiizinkan adalah PDF, DOC, DOCX, atau TXT";
+    if (!file_exists($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+
+    for ($i = 0; $i < $totalFiles; $i++) {
+        $fileName = $_FILES['files']['name'][$i];
+        $fileTmp = $_FILES['files']['tmp_name'][$i];
+        $fileSize = $_FILES['files']['size'][$i];
+        $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+        if (!in_array($fileExt, $allowedExtensions)) {
+            echo "File $fileName ditolak (bukan gambar).<br>";
+            continue;
         }
 
-        if($file_size >2097152){
-            $errors[] = "Ukuran file tidak boleh lebih dari 2 MB";
+        if ($fileSize > 5 * 1024 * 1024) {
+            echo "File $fileName terlalu besar (maks 5MB).<br>";
+            continue;
         }
 
-        if(empty($errors) == true){
-            move_uploaded_file($file_tmp, "documents/" . $file_name);
-            echo "File berhasil diunggah";
+        if (move_uploaded_file($fileTmp, $uploadDir . $fileName)) {
+            echo "File $fileName berhasil diunggah.<br>";
         } else {
-            echo implode(" ", $errors);
+            echo "Gagal mengunggah file $fileName.<br>";
         }
     }
+}
 ?>
