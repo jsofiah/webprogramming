@@ -17,13 +17,13 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="artist.html">Artist</a></li>
+            <li><a href="artist.php">Artist</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="register.php">Register</a></li>
         </ul>
     </nav>
-    <a href="https://youtu.be/PEpDpdQBgRE?si=YU5QTCmKK8X57NiE" target="_blank" class="cta-button">
-        <span class="cta-text">Watch 2024 Recap</span>
+    <a href="admin/login.php" target="_blank" class="cta-button">
+        <span class="cta-text">Admin</span>
         <span class="cta-arrow">→</span>
     </a>
 
